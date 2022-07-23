@@ -29,13 +29,16 @@
                 playRound(computerPlay(Math.random()), playerSelection);
             } ); 
         
-            paper.addEventListener('click', (playerSelection)=>{
+        paper.addEventListener('click', (playerSelection)=>{
                 playerSelection = "paper";
                 playRound(computerPlay(Math.random()), playerSelection);
             } ); 
         
-            scissors.addEventListener('click', (playerSelection)=>{
-            playRound(computerPlay(Math.random()), playerSelection);
+        scissors.addEventListener('click', (playerSelection)=>{
+                playerSelection = "scissors";
+                playerPlay = playerSelection
+                console.log(playerPlay)
+                playRound(computerPlay(Math.random()), playerSelection);
             } ); 
         function computerPlay(computerPlay){ 
             let number = computerPlay * 100; 
