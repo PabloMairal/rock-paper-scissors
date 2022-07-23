@@ -10,27 +10,31 @@
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
+    <button class="reset">Reset</button>
+    <div class="container"></div>
     <script>
         const rock = document.querySelector('#rock')
         const paper = document.querySelector('#paper')
         const scissors = document.querySelector('#scissors')
+        const container = document.querySelector('.container')
+        const reset = document.querySelector('.reset')
+        let content = document.createElement('p');
+        let score = document.createElement('p');
+        let result = document.createElement('p');
         let round = 0;
         let COM = 0;
         let player = 0;
         rock.addEventListener('click', (playerSelection)=>{
                 playerSelection = "rock";
-                console.log(playerSelection);
                 playRound(computerPlay(Math.random()), playerSelection);
             } ); 
         
             paper.addEventListener('click', (playerSelection)=>{
                 playerSelection = "paper";
-                console.log(playerSelection);
                 playRound(computerPlay(Math.random()), playerSelection);
             } ); 
         
             scissors.addEventListener('click', (playerSelection)=>{
-                playerSelection = "scissors";
             playRound(computerPlay(Math.random()), playerSelection);
             } ); 
         function computerPlay(computerPlay){ 
@@ -44,84 +48,98 @@
             else{
               return  "scissors"  
             }
-            
         }
+
         function playRound(computer, human){
             if (computer === "rock" && human === "rock"){
-                console.log("It's a tie!") 
+                content.textContent = "It's a tie";
+                container.appendChild(content);
                 player = player + 1;
                 COM = COM + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             else if (computer === "rock" && human === "paper"){
-                console.log("You won! Paper beats Rock")
+                content.textContent = "You won! Paper beats Rock";
+                container.appendChild(content);
                 player = player + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             else if(computer === "rock" && human === "scissors"){
-                console.log("You lost! Rock beats Scissors");
+                content.textContent = "You lost! Rock beats Scissors";
+                container.appendChild(content);
                 COM = COM + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
 
             else if (computer === "paper" && human === "rock"){
-                console.log("You lost! Paper beats Rock");
+                content.textContent = "You lost! Paper beats Rock";
+                container.appendChild(content);
                 COM = COM + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             else if(computer === "paper" && human === "paper"){
-                console.log("It's a tie!");
+                content.textContent = "It's a tie";
+                container.appendChild(content);
                 player = player + 1;
                 COM = COM + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             else if(computer === "paper" && human === "scissors"){
-                console.log("You won! Scissors beats Paper");
+                content.textContent = "You won! Scissors beats Paper";
+                container.appendChild(content);
                 player = player + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             else if(computer === "scissors" && human === "rock"){
-                console.log("You won! Rock beats Scissors");
+                content.textContent = "You won! Rock beats Scissors";
+                container.appendChild(content);
                 player = player + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             else if(computer === "scissors" && human === "paper"){
-                console.log("You lost! Scissors beats Paper");
+                content.textContent = "You lost! Scissors beats Paper";
+                container.appendChild(content);
                 COM = COM + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             else if(computer === "scissors" && human === "scissors"){
-                console.log("It's a tie!");
+                content.textContent = "It's a tie";
+                container.appendChild(content);
                 player = player + 1;
                 COM = COM + 1;
                 round++;
-                console.log("COM ", COM ," - ","You ", player);
+                score.textContent = `COM ${COM} - You ${player}`;
+                container.appendChild(score);
         }
             if(round === 5 && COM > player){
-                return console.log("You lost the game.")
+                result.textContent = "You lost the game."
+                container.appendChild(result)
         }
             else if(round === 5 && COM === player){
-                return console.log("Wow! It's a tie. What are the odds?")
+                result.textContent = "Wow! It's a tie. What are the odds?"
+                container.appendChild(result)
         }
             else if (round === 5 && player > COM){
-                return console.log("You won the game!")
+                result.textContent = "You won the game!"
+                container.appendChild(result)
         }  
     }
-        
-        /*function game(){
-            for(i=0; i<5 ; i++){
-                playRound();     
-        }
-    }
-    game();*/
     </script>
 </body>
 </html>
