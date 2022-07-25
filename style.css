@@ -1,0 +1,36 @@
+* {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+body {
+    background-color: antiquewhite;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    color: cadetblue;   
+    padding: 0px;
+    font-size: x-large;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: cadetblue;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+
+}
+img {
+    width: 240px;
+    height: 240px;
+}
+
+button{
+    padding: 0px;
+}
