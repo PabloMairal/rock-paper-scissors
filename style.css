@@ -58,6 +58,10 @@ body {
     height: 240px;
     width: 240px;
     margin-top: 50px;
+    font-size: xx-large;
+    color: rgb(52, 14, 155);
+    background-color: white;
+    border-radius: 180px;
 }
 img {
     width: 240px;
