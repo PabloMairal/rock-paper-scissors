@@ -3,10 +3,14 @@ const paper = document.querySelector('#paper')
 const scissors = document.querySelector('#scissors')
 const reset = document.querySelector('.reset')
 const container = document.querySelector('.container')
-    let content = document.createElement('p');
-    let score = document.createElement('p');
-    let result = document.createElement('p');
+    let content = document.createElement('div');
+    content.classList.add('content');
+    let score = document.createElement('div');
+    score.classList.add('score');
+    let result = document.createElement('div');
+    result.classList.add('result');
     let res = document.createElement('div');
+    res.classList.add('res');
         let round = 0;
         let COM = 0;
         let player = 0;
